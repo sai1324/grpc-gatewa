@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+option go_package = "proto/server/wenchangnative.proto";
+import "google/api/annotations.proto";
+
+
+package wenchangNative;
+
+message CreateNftRequest{
+  string ClassId = 1;
+  string Uri =2;
+  string UriHash =3;
+
+}
+
+message CreateNftResponse{
+    string Data =1;
+}
+
+message ClassByIDRequest{
+   string Name=1;
+   string TxHash=2;
+   string Owner=3;
+   string id = 4 ;
+}
+message ClassByIDResponse{
+  string ID=1;
+  string Name=2;
+  string Uri=3;
+
+}
+
+service NFTNative {//服务
+  rpc CreateNftClass (CreateNftRequest) returns (CreateNftResponse) {
+    option (google.api.http) = {//
+      post: "/native/nft/classes"
+      body: "*"
+    };
+  }
+  rpc FindNftClassyID (ClassByIDRequest) returns (ClassByIDResponse) {
+    option (google.api.http) = {
+      get: "/native/nft/classes/{id}"//
+    };
+  }
+}
