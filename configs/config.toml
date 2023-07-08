@@ -1,0 +1,39 @@
+
+
+
+
+[grpc_client]
+
+[grpc_client.wenchangchain_native]
+host = "127.0.0.1"
+port = "50051"
+
+[grpc_client.shenzhou_evm]
+host = "127.0.0.1"
+port = "50052"
+
+
+[grpc_client.wenchangchain_ddc]
+host ="192.168.150.41"
+port = "10000"
+
+
+[grpc_client.irata_native]
+host="192.168.150.43"
+port = "10000"
+
+[grpc_client.irishub_native]
+host = "192.168.150.43"
+port = "10000"
+
+[grpc_client.state_gateway]
+host = "192.168.150.44"
+port = "10000"
+
+[grpc_client.rights_jiangsu]
+host = "192.168.150.41"
+port = "10005"
+
+
+
+
